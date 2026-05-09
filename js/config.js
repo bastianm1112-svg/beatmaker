@@ -1108,7 +1108,7 @@ export function getFallbackBlueprint(artistId, albumName, mood) {
   // Apply densityMult (fix: was calculated but never applied)
   if (moodMod.densityMult) {
     const dm = moodMod.densityMult;
-    ['kick','snare','hat','openHat'].forEach(track => {
+    ['kick','snare','hat','openHat','hatRoll'].forEach(track => {
       base.drums[track] = base.drums[track].map(v => {
         if (dm > 1 && v === 0) return Math.random() < (dm - 1) * 0.3 ? 1 : 0;
         if (dm < 1 && v === 1) return Math.random() < (1 - dm) * 0.4 ? 0 : 1;
