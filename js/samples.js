@@ -2,7 +2,7 @@
    SAMPLES — Sample library manifest & loader
 ════════════════════════════════════════════ */
 
-const CDN_BASE = 'https://cdn.jsdelivr.net/gh/bastianm1112-svg/beatmaker@main/samples/';
+export const CDN_BASE = 'https://cdn.jsdelivr.net/gh/bastianm1112-svg/beatmaker@main/samples/';
 
 // ── Drum Sample Paths ──────────────────────
 const DRUM_SAMPLES = {
@@ -229,6 +229,7 @@ function _buildLoopManifest() {
   return LOOP_CATEGORIES.flatMap(cat =>
     Array.from({ length: cat.count }, (_, i) => ({
       file:    `${cat.prefix}-${String(i + 1).padStart(2, '0')}.mp3`,
+      url:     CDN_BASE + `${cat.prefix}-${String(i + 1).padStart(2, '0')}.mp3`,
       bpm:     cat.bpm,
       key:     cat.key,
       mood:    cat.mood,
