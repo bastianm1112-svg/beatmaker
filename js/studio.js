@@ -1,7 +1,7 @@
 /* ═══════════════════════════════════════════
    STUDIO — Editor screen
 ════════════════════════════════════════════ */
-import { initEngine, play, stop, setBpm, setSection, getBlueprint, isInitialized, regenLayer, setSampleBuffer, getAnalyser } from './engine.js';
+import { initEngine, play, stop, setBpm, setSection, getBlueprint, isInitialized, regenLayer, setSampleBuffer, getAnalyser, swapLoop } from './engine.js';
 import { initSequencer, updateSequencerBlueprint, updateSectionLabel } from './sequencer.js';
 import { initMixer } from './mixer.js';
 import { startExport, isRecording } from './exporter.js';
@@ -23,7 +23,7 @@ export async function initStudio(container, context) {
   container.innerHTML = _buildHTML(context);
 
   // Init audio engine
-  await initEngine(context.blueprint);
+  await initEngine(context.blueprint, context.samples || null);
   _currentKey = context.blueprint.key;
 
   // Apply artist accent
@@ -35,7 +35,7 @@ export async function initStudio(container, context) {
 
   // Sequencer
   const seqWrap = container.querySelector('#seq-wrap');
-  initSequencer(seqWrap, context.blueprint, _onRegenLayer);
+  initSequencer(seqWrap, context.blueprint, _onRegenLayer, context.samples?.loop || null);
 
   // Mixer
   const mixWrap = container.querySelector('#mix-wrap');

@@ -3,6 +3,7 @@
 ════════════════════════════════════════════ */
 import { ARTISTS } from './config.js';
 import { generateBlueprint } from './api.js';
+import { loadSamples } from './samples.js';
 
 let _selectedArtist = null;
 let _selectedAlbum  = null;
@@ -236,12 +237,24 @@ function _wireCreate(container) {
     _showLoading();
 
     try {
+      // Must be called on user gesture to unlock AudioContext
+      await window.Tone?.start();
+
       const blueprint = await generateBlueprint(
         _selectedArtist.id,
         _selectedAlbum,
         _selectedMood,
         description,
         msg => { const lt = document.getElementById('loading-text'); if (lt) lt.textContent = msg; }
+      );
+
+      const lt = document.getElementById('loading-text');
+      if (lt) lt.textContent = 'Loading sounds...';
+      const samples = await loadSamples(
+        _selectedArtist.id,
+        _selectedAlbum,
+        _selectedMood,
+        blueprint.key || 'Am'
       );
 
       // Optionally decode sample
@@ -262,6 +275,7 @@ function _wireCreate(container) {
         mood:   _selectedMood,
         sampleBuffer,
         sampleMode: _sampleMode,
+        samples,
       });
     } catch (err) {
       _hideLoading();

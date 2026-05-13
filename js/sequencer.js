@@ -1,13 +1,14 @@
 /* ═══════════════════════════════════════════
    SEQUENCER — 16-step grid UI
 ════════════════════════════════════════════ */
-import { updateStep, onStep, getBlueprint } from './engine.js';
+import { updateStep, onStep, getBlueprint, swapLoop } from './engine.js';
 
 const TRACKS = [
   { id: 'kick',    label: 'KICK'     },
   { id: 'snare',   label: 'SNARE'    },
   { id: 'hat',     label: 'HI-HAT'  },
   { id: 'openHat', label: 'OPEN HAT' },
+  { id: 'hatRoll', label: 'HAT ROLL' },
   { id: 'bass',    label: '808'      },
   { id: 'melody',  label: 'MELODY'  },
   { id: 'sample',  label: 'SAMPLE'  },
@@ -17,11 +18,15 @@ let _container = null;
 let _stepCells = {};   // track → [16 divs]
 let _removeOnStep = null;
 let _currentSection = 'main';
+let _loopAlts = [];
+let _loopAltIdx = 0;
 
-export function initSequencer(container, blueprint, onRegenLayer) {
+export function initSequencer(container, blueprint, onRegenLayer, loopInfo) {
   _container = container;
   _stepCells = {};
   _container.innerHTML = '';
+  _loopAlts = loopInfo?.alternatives || [];
+  _loopAltIdx = 0;
 
   // Section header
   const header = document.createElement('div');
@@ -46,6 +51,29 @@ export function initSequencer(container, blueprint, onRegenLayer) {
 
   // Track rows
   TRACKS.forEach(track => {
+    // Loop info bar above SAMPLE row
+    if (track.id === 'sample' && loopInfo?.meta) {
+      const loopBar = document.createElement('div');
+      loopBar.className = 'seq-loop-bar';
+      loopBar.id = 'seq-loop-bar';
+      const name = loopInfo.meta.file?.split('/').pop()?.replace('.mp3','') || 'loop';
+      loopBar.innerHTML = `
+        <span class="seq-loop-icon">◎</span>
+        <span class="seq-loop-name" id="seq-loop-name">${name}</span>
+        <button class="seq-loop-swap" id="seq-loop-swap">⟳ SWAP</button>
+      `;
+      loopBar.querySelector('#seq-loop-swap').addEventListener('click', async () => {
+        if (!_loopAlts.length) return;
+        _loopAltIdx = (_loopAltIdx + 1) % _loopAlts.length;
+        const next = _loopAlts[_loopAltIdx];
+        await swapLoop(next);
+        const newName = next.file?.split('/').pop()?.replace('.mp3','') || 'loop';
+        const nameEl = document.getElementById('seq-loop-name');
+        if (nameEl) nameEl.textContent = newName;
+      });
+      _container.appendChild(loopBar);
+    }
+
     const row = document.createElement('div');
     row.className = 'seq-row';
     row.dataset.track = track.id;
@@ -138,5 +166,6 @@ function _getStepValue(bp, trackId, stepIdx) {
   if (trackId === 'bass')   return bp.bass?.pattern?.[stepIdx]   || 0;
   if (trackId === 'melody') return bp.melody?.pattern?.[stepIdx] || 0;
   if (trackId === 'sample') return 0;
+  if (trackId === 'hatRoll') return bp.drums?.hatRoll?.[stepIdx] || 0;
   return bp.drums?.[trackId]?.[stepIdx] || 0;
 }
