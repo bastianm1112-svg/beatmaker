@@ -161,96 +161,96 @@ export const ARTISTS = [
 // tempo: [min, max], swing: 0-1, bassDistortion: 0-1, reverb: 0-1, delay: 0-1
 export const ALBUM_PRESETS = {
   // Kanye
-  'kanye:The College Dropout':   { tempo:[85,95],   swing:0.25, bassDistortion:0.15, reverb:0.4,  delay:0.2  },
-  'kanye:Late Registration':     { tempo:[80,95],   swing:0.2,  bassDistortion:0.2,  reverb:0.5,  delay:0.3  },
-  'kanye:Graduation':            { tempo:[120,135], swing:0.05, bassDistortion:0.25, reverb:0.3,  delay:0.2  },
-  "kanye:808s & Heartbreak":     { tempo:[70,90],   swing:0.1,  bassDistortion:0.2,  reverb:0.8,  delay:0.4  },
-  'kanye:Yeezus':                { tempo:[128,150], swing:0.0,  bassDistortion:0.9,  reverb:0.15, delay:0.1  },
-  'kanye:The Life of Pablo':     { tempo:[75,100],  swing:0.3,  bassDistortion:0.3,  reverb:0.6,  delay:0.3  },
+  'kanye:The College Dropout':   { tempo:[85,95],   swing:0.25, bassDistortion:0.15, reverb:0.4,  delay:0.2, chorus:0.10, phaser:0.00 },
+  'kanye:Late Registration':     { tempo:[80,95],   swing:0.2,  bassDistortion:0.2,  reverb:0.5,  delay:0.3, chorus:0.15, phaser:0.00 },
+  'kanye:Graduation':            { tempo:[120,135], swing:0.05, bassDistortion:0.25, reverb:0.3,  delay:0.2, chorus:0.00, phaser:0.00 },
+  "kanye:808s & Heartbreak":     { tempo:[70,90],   swing:0.1,  bassDistortion:0.2,  reverb:0.8,  delay:0.4, chorus:0, phaser:0  },
+  'kanye:Yeezus':                { tempo:[128,150], swing:0.0,  bassDistortion:0.9,  reverb:0.15, delay:0.1, chorus:0.00, phaser:0.20 },
+  'kanye:The Life of Pablo':     { tempo:[75,100],  swing:0.3,  bassDistortion:0.3,  reverb:0.6,  delay:0.3, chorus:0.20, phaser:0.00 },
   // Cudi
-  'cudi:Man on the Moon':        { tempo:[80,95],   swing:0.15, bassDistortion:0.1,  reverb:0.75, delay:0.35 },
-  'cudi:Man on the Moon II':     { tempo:[78,92],   swing:0.1,  bassDistortion:0.15, reverb:0.85, delay:0.4  },
-  'cudi:Indicud':                { tempo:[100,120], swing:0.05, bassDistortion:0.2,  reverb:0.5,  delay:0.3  },
-  'cudi:Satellite Flight':       { tempo:[70,85],   swing:0.2,  bassDistortion:0.05, reverb:0.95, delay:0.5  },
-  "cudi:Speedin' Bullet 2 Heaven": { tempo:[110,140], swing:0.0, bassDistortion:0.7, reverb:0.35, delay:0.2 },
-  "cudi:Passion Pain Demon Slayin'": { tempo:[80,100], swing:0.15, bassDistortion:0.1, reverb:0.7, delay:0.35 },
-  'cudi:Man on the Moon III':    { tempo:[85,100],  swing:0.2,  bassDistortion:0.12, reverb:0.65, delay:0.3  },
+  'cudi:Man on the Moon':        { tempo:[80,95],   swing:0.15, bassDistortion:0.1,  reverb:0.75, delay:0.35, chorus:0, phaser:0 },
+  'cudi:Man on the Moon II':     { tempo:[78,92],   swing:0.1,  bassDistortion:0.15, reverb:0.85, delay:0.4, chorus:0.35, phaser:0.15 },
+  'cudi:Indicud':                { tempo:[100,120], swing:0.05, bassDistortion:0.2,  reverb:0.5,  delay:0.3, chorus:0.10, phaser:0.00 },
+  'cudi:Satellite Flight':       { tempo:[70,85],   swing:0.2,  bassDistortion:0.05, reverb:0.95, delay:0.5, chorus:0.50, phaser:0.25 },
+  "cudi:Speedin' Bullet 2 Heaven": { tempo:[110,140], swing:0.0, bassDistortion:0.7, reverb:0.35, delay:0.2, chorus:0, phaser:0 },
+  "cudi:Passion Pain Demon Slayin'": { tempo:[80,100], swing:0.15, bassDistortion:0.1, reverb:0.7, delay:0.35, chorus:0, phaser:0 },
+  'cudi:Man on the Moon III':    { tempo:[85,100],  swing:0.2,  bassDistortion:0.12, reverb:0.65, delay:0.3, chorus:0.35, phaser:0.15 },
   // Travis
-  'travis:Owl Pharaoh':          { tempo:[130,145], swing:0.08, bassDistortion:0.3,  reverb:0.7,  delay:0.4  },
-  'travis:Days Before Rodeo':    { tempo:[125,145], swing:0.05, bassDistortion:0.35, reverb:0.8,  delay:0.45 },
-  'travis:Rodeo':                { tempo:[130,150], swing:0.05, bassDistortion:0.4,  reverb:0.65, delay:0.35 },
-  'travis:Birds in the Trap':    { tempo:[128,145], swing:0.07, bassDistortion:0.5,  reverb:0.7,  delay:0.4  },
-  'travis:Astroworld':           { tempo:[135,155], swing:0.05, bassDistortion:0.45, reverb:0.65, delay:0.38 },
-  'travis:Utopia':               { tempo:[138,160], swing:0.03, bassDistortion:0.55, reverb:0.6,  delay:0.35 },
+  'travis:Owl Pharaoh':          { tempo:[130,145], swing:0.08, bassDistortion:0.3,  reverb:0.7,  delay:0.4, chorus:0.15, phaser:0.00 },
+  'travis:Days Before Rodeo':    { tempo:[125,145], swing:0.05, bassDistortion:0.35, reverb:0.8,  delay:0.45, chorus:0, phaser:0 },
+  'travis:Rodeo':                { tempo:[130,150], swing:0.05, bassDistortion:0.4,  reverb:0.65, delay:0.35, chorus:0, phaser:0 },
+  'travis:Birds in the Trap':    { tempo:[128,145], swing:0.07, bassDistortion:0.5,  reverb:0.7,  delay:0.4, chorus:0.10, phaser:0.05 },
+  'travis:Astroworld':           { tempo:[135,155], swing:0.05, bassDistortion:0.45, reverb:0.65, delay:0.38, chorus:0, phaser:0 },
+  'travis:Utopia':               { tempo:[138,160], swing:0.03, bassDistortion:0.55, reverb:0.6,  delay:0.35, chorus:0, phaser:0 },
   // Drake
-  'drake:Thank Me Later':        { tempo:[120,135], swing:0.1,  bassDistortion:0.15, reverb:0.4,  delay:0.25 },
-  'drake:Take Care':             { tempo:[115,130], swing:0.12, bassDistortion:0.18, reverb:0.5,  delay:0.3  },
-  'drake:Nothing Was the Same':  { tempo:[118,132], swing:0.08, bassDistortion:0.15, reverb:0.55, delay:0.28 },
-  "drake:If You're Reading This":{ tempo:[90,115],  swing:0.15, bassDistortion:0.1,  reverb:0.45, delay:0.2  },
-  'drake:Views':                 { tempo:[120,138], swing:0.12, bassDistortion:0.2,  reverb:0.5,  delay:0.3  },
-  'drake:Scorpion':              { tempo:[125,140], swing:0.08, bassDistortion:0.18, reverb:0.45, delay:0.25 },
-  'drake:Certified Lover Boy':   { tempo:[120,135], swing:0.1,  bassDistortion:0.15, reverb:0.5,  delay:0.28 },
+  'drake:Thank Me Later':        { tempo:[120,135], swing:0.1,  bassDistortion:0.15, reverb:0.4,  delay:0.25, chorus:0, phaser:0 },
+  'drake:Take Care':             { tempo:[115,130], swing:0.12, bassDistortion:0.18, reverb:0.5,  delay:0.3, chorus:0.15, phaser:0.00 },
+  'drake:Nothing Was the Same':  { tempo:[118,132], swing:0.08, bassDistortion:0.15, reverb:0.55, delay:0.28, chorus:0, phaser:0 },
+  "drake:If You're Reading This":{ tempo:[90,115],  swing:0.15, bassDistortion:0.1,  reverb:0.45, delay:0.2, chorus:0, phaser:0  },
+  'drake:Views':                 { tempo:[120,138], swing:0.12, bassDistortion:0.2,  reverb:0.5,  delay:0.3, chorus:0.10, phaser:0.00 },
+  'drake:Scorpion':              { tempo:[125,140], swing:0.08, bassDistortion:0.18, reverb:0.45, delay:0.25, chorus:0, phaser:0 },
+  'drake:Certified Lover Boy':   { tempo:[120,135], swing:0.1,  bassDistortion:0.15, reverb:0.5,  delay:0.28, chorus:0, phaser:0 },
   // Young Thug
-  'thug:Barter 6':               { tempo:[128,142], swing:0.12, bassDistortion:0.25, reverb:0.5,  delay:0.3  },
-  'thug:Slime Season':           { tempo:[135,150], swing:0.05, bassDistortion:0.4,  reverb:0.4,  delay:0.25 },
-  'thug:Jeffery':                { tempo:[125,145], swing:0.1,  bassDistortion:0.3,  reverb:0.55, delay:0.3  },
-  'thug:Beautiful Thugger Girls':{ tempo:[100,125], swing:0.18, bassDistortion:0.2,  reverb:0.5,  delay:0.3  },
-  'thug:So Much Fun':            { tempo:[135,155], swing:0.06, bassDistortion:0.3,  reverb:0.45, delay:0.28 },
-  'thug:Punk':                   { tempo:[120,145], swing:0.1,  bassDistortion:0.35, reverb:0.55, delay:0.32 },
+  'thug:Barter 6':               { tempo:[128,142], swing:0.12, bassDistortion:0.25, reverb:0.5,  delay:0.3, chorus:0.05, phaser:0.00 },
+  'thug:Slime Season':           { tempo:[135,150], swing:0.05, bassDistortion:0.4,  reverb:0.4,  delay:0.25, chorus:0, phaser:0 },
+  'thug:Jeffery':                { tempo:[125,145], swing:0.1,  bassDistortion:0.3,  reverb:0.55, delay:0.3, chorus:0.10, phaser:0.05 },
+  'thug:Beautiful Thugger Girls':{ tempo:[100,125], swing:0.18, bassDistortion:0.2,  reverb:0.5,  delay:0.3, chorus:0.25, phaser:0.00 },
+  'thug:So Much Fun':            { tempo:[135,155], swing:0.06, bassDistortion:0.3,  reverb:0.45, delay:0.28, chorus:0, phaser:0 },
+  'thug:Punk':                   { tempo:[120,145], swing:0.1,  bassDistortion:0.35, reverb:0.55, delay:0.32, chorus:0, phaser:0 },
   // Ken Carson
-  'ken:A Great Chaos':           { tempo:[145,170], swing:0.0,  bassDistortion:0.8,  reverb:0.3,  delay:0.2  },
-  'ken:Project X':               { tempo:[140,165], swing:0.0,  bassDistortion:0.85, reverb:0.25, delay:0.15 },
-  'ken:I Am Nothing':            { tempo:[138,158], swing:0.02, bassDistortion:0.7,  reverb:0.35, delay:0.22 },
-  'ken:X':                       { tempo:[150,175], swing:0.0,  bassDistortion:0.95, reverb:0.2,  delay:0.1  },
+  'ken:A Great Chaos':           { tempo:[145,170], swing:0.0,  bassDistortion:0.8,  reverb:0.3,  delay:0.2, chorus:0.00, phaser:0.15 },
+  'ken:Project X':               { tempo:[140,165], swing:0.0,  bassDistortion:0.85, reverb:0.25, delay:0.15, chorus:0, phaser:0 },
+  'ken:I Am Nothing':            { tempo:[138,158], swing:0.02, bassDistortion:0.7,  reverb:0.35, delay:0.22, chorus:0, phaser:0 },
+  'ken:X':                       { tempo:[150,175], swing:0.0,  bassDistortion:0.95, reverb:0.2,  delay:0.1, chorus:0.00, phaser:0.20 },
   // Carti
-  'carti:Playboi Carti':         { tempo:[130,148], swing:0.1,  bassDistortion:0.3,  reverb:0.6,  delay:0.35 },
-  'carti:Die Lit':               { tempo:[140,158], swing:0.04, bassDistortion:0.45, reverb:0.5,  delay:0.3  },
-  'carti:Whole Lotta Red':       { tempo:[145,168], swing:0.0,  bassDistortion:0.7,  reverb:0.35, delay:0.2  },
-  'carti:Music':                 { tempo:[138,162], swing:0.05, bassDistortion:0.6,  reverb:0.5,  delay:0.3  },
+  'carti:Playboi Carti':         { tempo:[130,148], swing:0.1,  bassDistortion:0.3,  reverb:0.6,  delay:0.35, chorus:0, phaser:0 },
+  'carti:Die Lit':               { tempo:[140,158], swing:0.04, bassDistortion:0.45, reverb:0.5,  delay:0.3, chorus:0.05, phaser:0.05 },
+  'carti:Whole Lotta Red':       { tempo:[145,168], swing:0.0,  bassDistortion:0.7,  reverb:0.35, delay:0.2, chorus:0.00, phaser:0.10 },
+  'carti:Music':                 { tempo:[138,162], swing:0.05, bassDistortion:0.6,  reverb:0.5,  delay:0.3, chorus:0.05, phaser:0.10 },
   // Future
-  'future:Pluto':                { tempo:[130,145], swing:0.08, bassDistortion:0.4,  reverb:0.65, delay:0.38 },
-  'future:DS2':                  { tempo:[135,150], swing:0.04, bassDistortion:0.5,  reverb:0.55, delay:0.3  },
-  'future:EVOL':                 { tempo:[130,148], swing:0.05, bassDistortion:0.45, reverb:0.6,  delay:0.32 },
-  'future:HNDRXX':               { tempo:[120,138], swing:0.1,  bassDistortion:0.3,  reverb:0.6,  delay:0.35 },
-  'future:The WIZRD':            { tempo:[138,155], swing:0.05, bassDistortion:0.45, reverb:0.65, delay:0.35 },
-  'future:I Never Liked You':    { tempo:[140,158], swing:0.03, bassDistortion:0.55, reverb:0.55, delay:0.28 },
+  'future:Pluto':                { tempo:[130,145], swing:0.08, bassDistortion:0.4,  reverb:0.65, delay:0.38, chorus:0, phaser:0 },
+  'future:DS2':                  { tempo:[135,150], swing:0.04, bassDistortion:0.5,  reverb:0.55, delay:0.3, chorus:0.10, phaser:0.05 },
+  'future:EVOL':                 { tempo:[130,148], swing:0.05, bassDistortion:0.45, reverb:0.6,  delay:0.32, chorus:0, phaser:0 },
+  'future:HNDRXX':               { tempo:[120,138], swing:0.1,  bassDistortion:0.3,  reverb:0.6,  delay:0.35, chorus:0, phaser:0 },
+  'future:The WIZRD':            { tempo:[138,155], swing:0.05, bassDistortion:0.45, reverb:0.65, delay:0.35, chorus:0, phaser:0 },
+  'future:I Never Liked You':    { tempo:[140,158], swing:0.03, bassDistortion:0.55, reverb:0.55, delay:0.28, chorus:0, phaser:0 },
   // Uzi
-  'uzi:Luv Is Rage':             { tempo:[140,158], swing:0.06, bassDistortion:0.35, reverb:0.55, delay:0.3  },
-  'uzi:Luv Is Rage 2':           { tempo:[148,165], swing:0.04, bassDistortion:0.4,  reverb:0.5,  delay:0.28 },
-  'uzi:Eternal Atake':           { tempo:[148,170], swing:0.02, bassDistortion:0.45, reverb:0.45, delay:0.25 },
-  'uzi:The Pink Tape':           { tempo:[140,165], swing:0.05, bassDistortion:0.4,  reverb:0.5,  delay:0.3  },
+  'uzi:Luv Is Rage':             { tempo:[140,158], swing:0.06, bassDistortion:0.35, reverb:0.55, delay:0.3, chorus:0.05, phaser:0.00 },
+  'uzi:Luv Is Rage 2':           { tempo:[148,165], swing:0.04, bassDistortion:0.4,  reverb:0.5,  delay:0.28, chorus:0, phaser:0 },
+  'uzi:Eternal Atake':           { tempo:[148,170], swing:0.02, bassDistortion:0.45, reverb:0.45, delay:0.25, chorus:0, phaser:0 },
+  'uzi:The Pink Tape':           { tempo:[140,165], swing:0.05, bassDistortion:0.4,  reverb:0.5,  delay:0.3, chorus:0.10, phaser:0.10 },
   // Tyler
-  'tyler:Goblin':                { tempo:[85,105],  swing:0.12, bassDistortion:0.3,  reverb:0.45, delay:0.25 },
-  'tyler:Wolf':                  { tempo:[88,108],  swing:0.18, bassDistortion:0.15, reverb:0.5,  delay:0.3  },
-  'tyler:Cherry Bomb':           { tempo:[95,118],  swing:0.08, bassDistortion:0.5,  reverb:0.5,  delay:0.3  },
-  'tyler:Flower Boy':            { tempo:[88,105],  swing:0.2,  bassDistortion:0.1,  reverb:0.55, delay:0.32 },
-  'tyler:IGOR':                  { tempo:[90,108],  swing:0.15, bassDistortion:0.15, reverb:0.6,  delay:0.35 },
-  'tyler:Call Me If You Get Lost':{ tempo:[88,105], swing:0.22, bassDistortion:0.12, reverb:0.4,  delay:0.28 },
-  'tyler:Chromakopia':           { tempo:[90,112],  swing:0.18, bassDistortion:0.2,  reverb:0.55, delay:0.32 },
+  'tyler:Goblin':                { tempo:[85,105],  swing:0.12, bassDistortion:0.3,  reverb:0.45, delay:0.25, chorus:0, phaser:0 },
+  'tyler:Wolf':                  { tempo:[88,108],  swing:0.18, bassDistortion:0.15, reverb:0.5,  delay:0.3, chorus:0.20, phaser:0.00 },
+  'tyler:Cherry Bomb':           { tempo:[95,118],  swing:0.08, bassDistortion:0.5,  reverb:0.5,  delay:0.3, chorus:0.10, phaser:0.15 },
+  'tyler:Flower Boy':            { tempo:[88,105],  swing:0.2,  bassDistortion:0.1,  reverb:0.55, delay:0.32, chorus:0, phaser:0 },
+  'tyler:IGOR':                  { tempo:[90,108],  swing:0.15, bassDistortion:0.15, reverb:0.6,  delay:0.35, chorus:0, phaser:0 },
+  'tyler:Call Me If You Get Lost':{ tempo:[88,105], swing:0.22, bassDistortion:0.12, reverb:0.4,  delay:0.28, chorus:0, phaser:0 },
+  'tyler:Chromakopia':           { tempo:[90,112],  swing:0.18, bassDistortion:0.2,  reverb:0.55, delay:0.32, chorus:0, phaser:0 },
   // Toliver
-  'toliver:Heaven or Hell':      { tempo:[130,148], swing:0.08, bassDistortion:0.3,  reverb:0.65, delay:0.38 },
-  'toliver:Life of a DON':       { tempo:[128,145], swing:0.1,  bassDistortion:0.28, reverb:0.6,  delay:0.35 },
-  'toliver:Love Sick':           { tempo:[125,142], swing:0.1,  bassDistortion:0.32, reverb:0.7,  delay:0.4  },
-  'toliver:Hardstone Psycho':    { tempo:[132,150], swing:0.06, bassDistortion:0.4,  reverb:0.6,  delay:0.35 },
+  'toliver:Heaven or Hell':      { tempo:[130,148], swing:0.08, bassDistortion:0.3,  reverb:0.65, delay:0.38, chorus:0, phaser:0 },
+  'toliver:Life of a DON':       { tempo:[128,145], swing:0.1,  bassDistortion:0.28, reverb:0.6,  delay:0.35, chorus:0, phaser:0 },
+  'toliver:Love Sick':           { tempo:[125,142], swing:0.1,  bassDistortion:0.32, reverb:0.7,  delay:0.4, chorus:0.25, phaser:0.10 },
+  'toliver:Hardstone Psycho':    { tempo:[132,150], swing:0.06, bassDistortion:0.4,  reverb:0.6,  delay:0.35, chorus:0, phaser:0 },
   // 21 Savage
-  'savage:Savage Mode':          { tempo:[125,142], swing:0.05, bassDistortion:0.35, reverb:0.5,  delay:0.28 },
-  'savage:I Am > I Was':         { tempo:[128,145], swing:0.06, bassDistortion:0.3,  reverb:0.48, delay:0.26 },
-  'savage:Savage Mode II':       { tempo:[128,145], swing:0.04, bassDistortion:0.38, reverb:0.55, delay:0.3  },
-  'savage:american dream':       { tempo:[130,148], swing:0.06, bassDistortion:0.28, reverb:0.5,  delay:0.28 },
+  'savage:Savage Mode':          { tempo:[125,142], swing:0.05, bassDistortion:0.35, reverb:0.5,  delay:0.28, chorus:0, phaser:0 },
+  'savage:I Am > I Was':         { tempo:[128,145], swing:0.06, bassDistortion:0.3,  reverb:0.48, delay:0.26, chorus:0, phaser:0 },
+  'savage:Savage Mode II':       { tempo:[128,145], swing:0.04, bassDistortion:0.38, reverb:0.55, delay:0.3, chorus:0.00, phaser:0.05 },
+  'savage:american dream':       { tempo:[130,148], swing:0.06, bassDistortion:0.28, reverb:0.5,  delay:0.28, chorus:0, phaser:0 },
 };
 
 // ─── Mood Modifiers ────────────────────────
 export const MOOD_MODIFIERS = {
-  AGGRESSIVE:   { tempoDelta:+12, swingMult:0.5,  densityMult:1.4, reverbMult:0.7,  distMult:1.6 },
-  SAD:          { tempoDelta:-15, swingMult:1.2,  densityMult:0.6, reverbMult:1.4,  distMult:0.6 },
-  JOYFUL:       { tempoDelta:+8,  swingMult:1.1,  densityMult:1.1, reverbMult:0.9,  distMult:0.8 },
-  DARK:         { tempoDelta:-5,  swingMult:0.8,  densityMult:0.8, reverbMult:1.3,  distMult:1.2 },
-  CHILL:        { tempoDelta:-12, swingMult:1.3,  densityMult:0.5, reverbMult:1.5,  distMult:0.4 },
-  ENERGETIC:    { tempoDelta:+15, swingMult:0.6,  densityMult:1.5, reverbMult:0.7,  distMult:1.1 },
-  PSYCHEDELIC:  { tempoDelta:-8,  swingMult:1.4,  densityMult:0.7, reverbMult:1.8,  distMult:0.7 },
-  MELANCHOLIC:  { tempoDelta:-10, swingMult:1.2,  densityMult:0.5, reverbMult:1.6,  distMult:0.5 },
-  EPIC:         { tempoDelta:+5,  swingMult:0.7,  densityMult:1.3, reverbMult:1.2,  distMult:1.3 },
-  HAZY:         { tempoDelta:-20, swingMult:1.5,  densityMult:0.6, reverbMult:2.0,  distMult:0.5 },
+  AGGRESSIVE:   { tempoDelta:+12, swingMult:0.5,  densityMult:1.4, reverbMult:0.7,  distMult:1.6, chorus:0.00, phaser:0.00 },
+  SAD:          { tempoDelta:-15, swingMult:1.2,  densityMult:0.6, reverbMult:1.4,  distMult:0.6, chorus:0.25, phaser:0.00 },
+  JOYFUL:       { tempoDelta:+8,  swingMult:1.1,  densityMult:1.1, reverbMult:0.9,  distMult:0.8, chorus:0.20, phaser:0.00 },
+  DARK:         { tempoDelta:-5,  swingMult:0.8,  densityMult:0.8, reverbMult:1.3,  distMult:1.2, chorus:0.00, phaser:0.10 },
+  CHILL:        { tempoDelta:-12, swingMult:1.3,  densityMult:0.5, reverbMult:1.5,  distMult:0.4, chorus:0.35, phaser:0.00 },
+  ENERGETIC:    { tempoDelta:+15, swingMult:0.6,  densityMult:1.5, reverbMult:0.7,  distMult:1.1, chorus:0.00, phaser:0.00 },
+  PSYCHEDELIC:  { tempoDelta:-8,  swingMult:1.4,  densityMult:0.7, reverbMult:1.8,  distMult:0.7, chorus:0.45, phaser:0.75 },
+  MELANCHOLIC:  { tempoDelta:-10, swingMult:1.2,  densityMult:0.5, reverbMult:1.6,  distMult:0.5, chorus:0.20, phaser:0.10 },
+  EPIC:         { tempoDelta:+5,  swingMult:0.7,  densityMult:1.3, reverbMult:1.2,  distMult:1.3, chorus:0.10, phaser:0.00 },
+  HAZY:         { tempoDelta:-20, swingMult:1.5,  densityMult:0.6, reverbMult:2.0,  distMult:0.5, chorus:0.40, phaser:0.20 },
 };
 
 // ─── Base Blueprints (per artist) ──────────
@@ -280,7 +280,7 @@ const BASE_BLUEPRINTS = {
       complexity: 0.4
     },
     sample: { mode: 'none', slice_count: 0 },
-    effects: { reverb: 0.7, delay: 0.35 }
+    effects: { reverb: 0.7, delay: 0.35, chorus: 0, phaser: 0 }
   },
 
   cudi: {
@@ -307,7 +307,7 @@ const BASE_BLUEPRINTS = {
       complexity: 0.5
     },
     sample: { mode: 'none', slice_count: 0 },
-    effects: { reverb: 0.8, delay: 0.4 }
+    effects: { reverb: 0.8, delay: 0.4, chorus: 0, phaser: 0 }
   },
 
   travis: {
@@ -334,7 +334,7 @@ const BASE_BLUEPRINTS = {
       complexity: 0.7
     },
     sample: { mode: 'none', slice_count: 0 },
-    effects: { reverb: 0.65, delay: 0.38 }
+    effects: { reverb: 0.65, delay: 0.38, chorus: 0, phaser: 0 }
   },
 
   drake: {
@@ -361,7 +361,7 @@ const BASE_BLUEPRINTS = {
       complexity: 0.55
     },
     sample: { mode: 'none', slice_count: 0 },
-    effects: { reverb: 0.5, delay: 0.28 }
+    effects: { reverb: 0.5, delay: 0.28, chorus: 0, phaser: 0 }
   },
 
   thug: {
@@ -388,7 +388,7 @@ const BASE_BLUEPRINTS = {
       complexity: 0.65
     },
     sample: { mode: 'none', slice_count: 0 },
-    effects: { reverb: 0.5, delay: 0.3 }
+    effects: { reverb: 0.5, delay: 0.3, chorus: 0, phaser: 0 }
   },
 
   ken: {
@@ -415,7 +415,7 @@ const BASE_BLUEPRINTS = {
       complexity: 0.5
     },
     sample: { mode: 'none', slice_count: 0 },
-    effects: { reverb: 0.25, delay: 0.15 }
+    effects: { reverb: 0.25, delay: 0.15, chorus: 0, phaser: 0 }
   },
 
   carti: {
@@ -442,7 +442,7 @@ const BASE_BLUEPRINTS = {
       complexity: 0.4
     },
     sample: { mode: 'none', slice_count: 0 },
-    effects: { reverb: 0.55, delay: 0.3 }
+    effects: { reverb: 0.55, delay: 0.3, chorus: 0, phaser: 0 }
   },
 
   future: {
@@ -469,7 +469,7 @@ const BASE_BLUEPRINTS = {
       complexity: 0.5
     },
     sample: { mode: 'none', slice_count: 0 },
-    effects: { reverb: 0.6, delay: 0.32 }
+    effects: { reverb: 0.6, delay: 0.32, chorus: 0, phaser: 0 }
   },
 
   uzi: {
@@ -496,7 +496,7 @@ const BASE_BLUEPRINTS = {
       complexity: 0.6
     },
     sample: { mode: 'none', slice_count: 0 },
-    effects: { reverb: 0.5, delay: 0.28 }
+    effects: { reverb: 0.5, delay: 0.28, chorus: 0, phaser: 0 }
   },
 
   tyler: {
@@ -523,7 +523,7 @@ const BASE_BLUEPRINTS = {
       complexity: 0.7
     },
     sample: { mode: 'none', slice_count: 0 },
-    effects: { reverb: 0.55, delay: 0.32 }
+    effects: { reverb: 0.55, delay: 0.32, chorus: 0, phaser: 0 }
   },
 
   toliver: {
@@ -550,7 +550,7 @@ const BASE_BLUEPRINTS = {
       complexity: 0.55
     },
     sample: { mode: 'none', slice_count: 0 },
-    effects: { reverb: 0.65, delay: 0.38 }
+    effects: { reverb: 0.65, delay: 0.38, chorus: 0, phaser: 0 }
   },
 
   savage: {
@@ -577,7 +577,7 @@ const BASE_BLUEPRINTS = {
       complexity: 0.35
     },
     sample: { mode: 'none', slice_count: 0 },
-    effects: { reverb: 0.5, delay: 0.28 }
+    effects: { reverb: 0.5, delay: 0.28, chorus: 0, phaser: 0 }
   },
 };
 
@@ -1094,16 +1094,20 @@ export function getFallbackBlueprint(artistId, albumName, mood) {
   if (preset.tempo) {
     base.tempo = preset.tempo[0] + Math.floor(Math.random() * (preset.tempo[1] - preset.tempo[0] + 1));
   }
-  if (preset.swing      !== undefined) base.drums.swing          = preset.swing;
-  if (preset.bassDistortion !== undefined) base.bass.distortion  = preset.bassDistortion;
-  if (preset.reverb     !== undefined) base.effects.reverb       = preset.reverb;
-  if (preset.delay      !== undefined) base.effects.delay        = preset.delay;
+  if (preset.swing          !== undefined) base.drums.swing         = preset.swing;
+  if (preset.bassDistortion !== undefined) base.bass.distortion     = preset.bassDistortion;
+  if (preset.reverb         !== undefined) base.effects.reverb      = preset.reverb;
+  if (preset.delay          !== undefined) base.effects.delay       = preset.delay;
+  if (preset.chorus         !== undefined) base.effects.chorus      = preset.chorus;
+  if (preset.phaser         !== undefined) base.effects.phaser      = preset.phaser;
 
   // Apply mood modifier
   if (moodMod.tempoDelta)   base.tempo = clamp(base.tempo + moodMod.tempoDelta, 55, 200);
   if (moodMod.reverbMult)   base.effects.reverb = clamp(base.effects.reverb * moodMod.reverbMult, 0, 1);
   if (moodMod.distMult)     base.bass.distortion = clamp(base.bass.distortion * moodMod.distMult, 0, 1);
   if (moodMod.swingMult)    base.drums.swing = clamp(base.drums.swing * moodMod.swingMult, 0, 0.5);
+  if (moodMod.chorus !== undefined) base.effects.chorus = clamp((base.effects.chorus || 0) + moodMod.chorus, 0, 1);
+  if (moodMod.phaser !== undefined) base.effects.phaser = clamp((base.effects.phaser || 0) + moodMod.phaser, 0, 1);
 
   // Apply densityMult (fix: was calculated but never applied)
   if (moodMod.densityMult) {

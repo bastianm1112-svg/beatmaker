@@ -65,7 +65,7 @@ Return ONLY this exact JSON structure (no extra fields):
     "complexity": <0.0 to 1.0>
   },
   "sample": { "mode": "none", "slice_count": 0 },
-  "effects": { "reverb": <0.0 to 1.0>, "delay": <0.0 to 1.0> }
+  "effects": { "reverb": <0.0 to 1.0>, "delay": <0.0 to 1.0>, "chorus": <0.0 to 1.0>, "phaser": <0.0 to 1.0> }
 }
 
 CRITICAL: notes array length MUST equal the count of 1s in the corresponding pattern array.`;

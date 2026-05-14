@@ -298,14 +298,10 @@ export async function loadSamples(artistId, albumName, mood, key) {
   Object.entries(BASS_URLS).forEach(([note, path]) => { bassUrls[note] = u(path); });
   const bass = new Tone.Sampler({ urls: bassUrls, release: 1 });
 
-  // Melody stab sampler
+  // Melody stab sampler — one file pitched across the keyboard
   const stabStyle = profile.stabStyle || 'hard';
   const melody = new Tone.Sampler({
-    urls: {
-      C3: u(`synths/stabs/stab-${stabStyle}-C3-01.mp3`),
-      C4: u(`synths/stabs/stab-${stabStyle}-C4-01.mp3`),
-      C5: u(`synths/stabs/stab-${stabStyle}-C5-01.mp3`),
-    },
+    urls: { A3: u(`synths/stabs/stab-${stabStyle}-01.mp3`) },
     release: 0.5,
   });
 
@@ -313,9 +309,9 @@ export async function loadSamples(artistId, albumName, mood, key) {
   const loopPlayer = new Tone.Player(u(loopEntry.file));
   loopPlayer.loop = true;
 
-  // Wait for all buffers (timeout handles missing CDN files gracefully)
+  // Wait for all buffers — swallow load errors so a 404 doesn't crash the whole flow
   await Promise.race([
-    Tone.loaded(),
+    Tone.loaded().catch(() => {}),
     new Promise(resolve => setTimeout(resolve, 8000)),
   ]);
 

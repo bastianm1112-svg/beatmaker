@@ -39,6 +39,15 @@ export async function initEngine(blueprint, samples) {
 
   _effects.distortion = new Tone.Distortion(blueprint.bass.distortion);
 
+  // Chorus — lush width on melody (chill, psychedelic, sad moods)
+  _effects.chorus = new Tone.Chorus(4, 2.5, blueprint.effects.chorus || 0).start();
+  _effects.chorus.connect(_effects.delay);
+
+  // Phaser — sweeping filter on melody (psychedelic, hazy moods)
+  _effects.phaser = new Tone.Phaser({ frequency: 0.5, octaves: 3, baseFrequency: 1000 });
+  _effects.phaser.wet.value = blueprint.effects.phaser || 0;
+  _effects.phaser.connect(_effects.chorus);
+
   _effects.limiter = new Tone.Limiter(-3);
   _effects.limiter.toDestination();
 
@@ -52,8 +61,8 @@ export async function initEngine(blueprint, samples) {
   _channels.hat     = new Tone.Channel({ volume: -7,  pan: 0.1  }).connect(_effects.reverb);
   _channels.openHat = new Tone.Channel({ volume: -9,  pan: -0.1 }).connect(_effects.reverb);
   _channels.bass    = new Tone.Channel({ volume: 1,   pan: 0    }).connect(_effects.limiter);
-  _channels.melody  = new Tone.Channel({ volume: -4,  pan: 0    }).connect(_effects.delay);
-  _channels.sample  = new Tone.Channel({ volume: -5,  pan: 0    }).connect(_effects.reverb);
+  _channels.melody  = new Tone.Channel({ volume: -4,  pan: 0    }).connect(_effects.phaser);
+  _channels.sample  = new Tone.Channel({ volume: -5,  pan: 0    }).connect(_effects.phaser);
 
   // ── Filters ───────────────────────────
   const bassFilter = new Tone.Filter(220, 'lowpass');
